@@ -1,0 +1,9 @@
+Hardik Hyperion Processor
+Assumptions:
+4 bit CPU
+8 registers
+Microcontroller based processor
+
+Read-only Memory
+1 Instruction takes 16 bits.
+Atmost 256 instructions
