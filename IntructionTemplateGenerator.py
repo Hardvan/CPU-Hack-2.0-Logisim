@@ -22,7 +22,7 @@ def getFinalCode(instruction):
         hex_digit = hex(int(instruction[i:i + 4], 2))[2:]
         code.append(hex_digit)
 
-    return " ".join(code)
+    return "".join(code)
 
 
 def getInstructionTemplate(command):
