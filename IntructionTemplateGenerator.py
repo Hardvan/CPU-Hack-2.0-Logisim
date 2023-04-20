@@ -59,8 +59,7 @@ def getInstructionTemplate(command):
 
     # MOV
     if words[0] == "mov" or words[0] == "move":
-        instruction[0] = "0"
-        instruction[1] = "0"
+        instruction[0:2] = "00"
 
         immd = int(words[1][1:])
         immd = getBinary(immd, 4)
@@ -68,42 +67,31 @@ def getInstructionTemplate(command):
 
     # Data Manipulation
     else:
-        instruction[0] = "1"
-        instruction[1] = "1"
+        instruction[0:2] = "11"
 
         if words[0] == "add":
-            instruction[2] = "0"
-            instruction[3] = "0"
-            instruction[4] = "0"
+            instruction[2:5] = "000"
         elif words[0] == "and":
-            instruction[2] = "0"
-            instruction[3] = "0"
-            instruction[4] = "1"
+            instruction[2:5] = "001"
         elif words[0] == "or":
-            instruction[2] = "0"
-            instruction[3] = "1"
-            instruction[4] = "0"
+            instruction[2:5] = "010"
         elif words[0] == "xor":
-            instruction[2] = "0"
-            instruction[3] = "1"
-            instruction[4] = "1"
+            instruction[2:5] = "011"
         elif words[0] == "sub":
-            instruction[2] = "1"
-            instruction[3] = "0"
-            instruction[4] = "0"
+            instruction[2:5] = "100"
 
-        Rb = int(words[-2][1])
-        Rb = getBinary(Rb, 3)
-        instruction[10:13] = Rb
+        register_b = int(words[-2][1])
+        register_b = getBinary(register_b, 3)
+        instruction[10:13] = register_b
 
-        Ra = int(words[-3][1])
-        Ra = getBinary(Ra, 3)
-        instruction[7:10] = Ra
+        register_a = int(words[-3][1])
+        register_a = getBinary(register_a, 3)
+        instruction[7:10] = register_a
 
     instruction = "".join(instruction)
 
-    machine_code = get4BitSpace(instruction)
-    print(f"Machine Code: {machine_code}")
+    spaced_code = get4BitSpace(instruction)
+    print(f"Machine Code: {spaced_code}")
 
     final_code = getFinalCode(instruction)
 
