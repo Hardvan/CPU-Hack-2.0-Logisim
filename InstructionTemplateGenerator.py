@@ -53,9 +53,9 @@ def getInstructionTemplate(command):
     instruction = ["0" for i in range(16)]
 
     # Destination Register (Common for all instructions)
-    Rd = int(words[-1][1])
-    Rd = getBinary(Rd, 3)
-    instruction[13:16] = Rd
+    register_d = int(words[-1][1])
+    register_d = getBinary(register_d, 3)
+    instruction[13:16] = register_d
 
     # MOV
     if words[0] == "mov" or words[0] == "move":

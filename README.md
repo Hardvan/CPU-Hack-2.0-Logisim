@@ -1,6 +1,6 @@
 # Hardik Hyperion Processor
 
-Developed a RISC CPU involving ALU, 8 Registers and ROM.
+Developed a RISC CPU involving ALU, 8 Registers and ROM. Also includes a Python Script [InstructionTemplateGenerator.py](InstructionTemplateGenerator.py) to generate the instruction template for the processor.
 
 ## RISC CPU Architecture
 
