@@ -100,5 +100,6 @@ def getInstructionTemplate(command):
     return final_code
 
 
-# getInstructionTemplate("MOV #5, R3")
-# getInstructionTemplate("ADD R2, R3, R7")
+if __name__ == "__main__":
+    getInstructionTemplate("MOV #5, R3")
+    getInstructionTemplate("ADD R2, R3, R7")
