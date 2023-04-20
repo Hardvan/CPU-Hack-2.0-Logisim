@@ -61,7 +61,7 @@ def getInstructionTemplate(command):
     if words[0] == "mov" or words[0] == "move":
         instruction[0:2] = "00"
 
-        immd = int(words[1][1:])
+        immd = int(words[1][1:], 16)
         immd = getBinary(immd, 4)
         instruction[9:13] = immd
 
@@ -100,5 +100,5 @@ def getInstructionTemplate(command):
     return final_code
 
 
-getInstructionTemplate("MOV #5, R3")
-getInstructionTemplate("ADD R2, R3, R7")
+# getInstructionTemplate("MOV #5, R3")
+# getInstructionTemplate("ADD R2, R3, R7")
